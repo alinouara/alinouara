@@ -20,7 +20,7 @@
       font-size: 24px;
     }
     form {
-      max-width: 700px;
+      max-width: 900px;
       margin: 40px auto;
       background-color: #fff;
       padding: 30px;
@@ -48,22 +48,32 @@
     }
     .products {
       margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
     }
     .product-item {
-      display: flex;
-      align-items: center;
-      margin: 10px 0;
-      border: 1px solid #ddd;
-      padding: 10px;
-      border-radius: 10px;
+      border: 2px solid #007bff;
+      border-radius: 12px;
       background-color: #fafafa;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .product-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
     .product-item img {
-      width: 80px;
-      height: 80px;
-      margin-left: 15px;
-      border-radius: 10px;
+      width: 100px;
+      height: 100px;
       object-fit: cover;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .hidden-section {
+      display: none;
     }
     .payment-methods {
       margin-top: 25px;
@@ -100,17 +110,50 @@
     }
     .social-links a {
       margin: 0 10px;
-      color: #222;
-      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      display: inline-block;
+      transition: background-color 0.3s, transform 0.2s;
     }
     .social-links a:hover {
-      text-decoration: underline;
+      background-color: #f0f0f0;
+      transform: scale(1.05);
+    }
+    .social-links a[href*="facebook"] {
+      color: #3b5998;
+      border-color: #3b5998;
+    }
+    .social-links a[href*="tiktok"] {
+      color: #010101;
+      border-color: #010101;
     }
   </style>
+  <script>
+    function showForm() {
+      document.getElementById('customer-form').classList.remove('hidden-section');
+      document.getElementById('product-section').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </head>
 <body>
   <header>مرحبا بكم في متجر PlugStyle</header>
-  <form action="https://formsubmit.co/plugstyle17@gmail.com" method="POST">
+
+  <div id="product-section">
+    <h2 style="text-align:center">اختر المنتجات</h2>
+    <div class="products">
+      <label class="product-item">
+        <input type="checkbox" name="products" value="ساعة يد رجالية - 2200 دج">
+        <div>ساعة يد رجالية - 2200 دج</div>
+        <img src="https://via.placeholder.com/100" alt="ساعة يد">
+      </label>
+    </div>
+    <div style="text-align:center; margin-top: 20px;">
+      <button onclick="showForm()">التالي: ملئ النموذج</button>
+    </div>
+  </div>
+
+  <form id="customer-form" class="hidden-section" action="https://formsubmit.co/plugstyle17@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false">
 
     <h2>معلومات الزبون</h2>
@@ -125,13 +168,6 @@
     <label>رقم الهاتف:</label>
     <input type="tel" name="phone" required>
 
-    <h2 class="products">اختر المنتجات</h2>
-    <div class="product-item">
-      <input type="checkbox" id="product1" name="products" value="ساعة يد رجالية - 2200 دج">
-      <label for="product1">ساعة يد رجالية - 2200 دج</label>
-      <img src="https://via.placeholder.com/80" alt="ساعة يد">
-    </div>
-
     <h2 class="payment-methods">اختر طريقة الدفع أو التواصل</h2>
     <label><input type="radio" name="payment" value="بريدي موب" required> الدفع عبر بريدي موب</label>
     <label><input type="radio" name="payment" value="انستغرام"> تواصل عبر <a href="https://www.instagram.com/plug_style17" target="_blank">Instagram</a></label>
@@ -141,7 +177,7 @@
 
   <div class="social-links">
     تابعنا على:
-    <a href="https://www.facebook.com/plug.style17?locale=ar_AR" target="_blank">فيسبوك</a> |
+    <a href="https://www.facebook.com/plug.style17?locale=ar_AR" target="_blank">فيسبوك</a>
     <a href="https://www.tiktok.com/@lor6j?is_from_webapp=1&sender_device=pc" target="_blank">تيك توك</a>
   </div>
 </body>
