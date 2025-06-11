@@ -94,51 +94,37 @@
     button:hover {
       background-color: #0056b3;
     }
-    .success-message {
-      text-align: center;
-      margin-top: 20px;
-      color: green;
-      font-size: 18px;
-      display: none;
-    }
   </style>
 </head>
 <body>
   <header>مرحبا بكم في متجر PlugStyle</header>
-  <form id="orderForm">
+  <form action="https://formsubmit.co/plugstyle17@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+
     <h2>معلومات الزبون</h2>
     <label>الاسم:</label>
-    <input type="text" required>
+    <input type="text" name="first_name" required>
     <label>اللقب:</label>
-    <input type="text" required>
+    <input type="text" name="last_name" required>
     <label>المدينة:</label>
-    <input type="text" required>
+    <input type="text" name="city" required>
     <label>الولاية:</label>
-    <input type="text" required>
+    <input type="text" name="state" required>
     <label>رقم الهاتف:</label>
-    <input type="tel" required>
+    <input type="tel" name="phone" required>
 
     <h2 class="products">اختر المنتجات</h2>
     <div class="product-item">
-      <input type="checkbox" id="product1" name="product" value="ساعة يد رجالية - 2200 دج">
+      <input type="checkbox" id="product1" name="products" value="ساعة يد رجالية - 2200 دج">
       <label for="product1">ساعة يد رجالية - 2200 دج</label>
       <img src="https://via.placeholder.com/80" alt="ساعة يد">
     </div>
 
     <h2 class="payment-methods">اختر طريقة الدفع أو التواصل</h2>
     <label><input type="radio" name="payment" value="بريدي موب" required> الدفع عبر بريدي موب</label>
-    <label><input type="radio" name="payment" value="انستغرام"> تواصل معي عبر <a href="https://www.instagram.com/plug_style17?utm_source=ig_web_button_share_sheet&igsh=NHViOTBoaGJwMWFw" target="_blank">Instagram</a></label>
+    <label><input type="radio" name="payment" value="انستغرام"> تواصل عبر <a href="https://www.instagram.com/plug_style17" target="_blank">Instagram</a></label>
 
     <button type="submit">تأكيد الطلب</button>
-    <div class="success-message" id="successMessage">تم إرسال الطلب بنجاح! سنقوم بالتواصل معك قريباً.</div>
   </form>
-
-  <script>
-    document.getElementById("orderForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      document.getElementById("successMessage").style.display = "block";
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
 </body>
 </html>
