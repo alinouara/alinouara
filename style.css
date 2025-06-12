@@ -1,47 +1,50 @@
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-    color: #333;
-    direction: rtl;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f2f2f2, #e6e6e6);
+  direction: rtl;
 }
-
-.container {
-    max-width: 850px;
-    margin: auto;
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  position: relative;
 }
-
-h1 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
-    color: #0077cc;
+.logo {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
 }
-
-h2 {
-    color: #555;
-    margin-top: 30px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+.animated-title {
+  animation: slideIn 1s ease-out;
 }
-
-ul {
-    line-height: 2;
-    padding-right: 20px;
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
-
-p {
-    font-size: 1.1em;
-    line-height: 1.8;
+.hidden-section {
+  display: none;
 }
-
-@media (max-width: 600px) {
-    .container {
-        padding: 20px;
-    }
+.products {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+.product-item {
+  border: 2px solid #007bff;
+  border-radius: 12px;
+  background-color: #fafafa;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.social-links {
+  text-align: center;
+  margin-top: 40px;
 }

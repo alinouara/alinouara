@@ -3,35 +3,33 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>تم إرسال الطلب</title>
+  <title>تم الإرسال</title>
   <style>
     body {
-      background-color: #f8f9fa;
       font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
       text-align: center;
-      padding: 100px 20px;
-      color: #333;
+      padding: 50px;
+      direction: rtl;
     }
     .message {
-      background: #e0ffe0;
-      border: 2px solid #28a745;
-      border-radius: 12px;
-      padding: 40px;
+      background-color: #fff;
+      padding: 30px;
+      margin: auto;
       display: inline-block;
-      font-size: 22px;
-      line-height: 1.8;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
-    .message::before {
-      content: "☑️ ";
-      font-size: 28px;
+    .message h1 {
       color: green;
+      font-size: 24px;
     }
   </style>
 </head>
 <body>
   <div class="message">
-    سوف أقدم طلبك، الرجاء تفقد بريدك الالكتروني لاكتمال الدفع ☑️
+    <h1>☑️ شكرا! تم إرسال طلبك</h1>
+    <p>يرجى تفقد بريدك الإلكتروني لإكمال عملية الدفع.</p>
   </div>
 </body>
 </html>
